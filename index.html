@@ -1,0 +1,29 @@
+<script>
+
+    let x = Math.floor(Math.random() * 1000);
+    console.log('Загадалось число:', x);
+
+    while (true) {
+        const guess = prompt('Введите число от 0 до 999');
+        console.log('Пользователь ввел число : ', guess);
+
+        if (guess == 'q') {
+            alert('Вы вышли из игры')
+            break;
+        } else if (isNaN(guess)) {
+            alert('Вы ввели не число')
+        } else if (guess < 0 || guess > 999){
+            alert('Вы ввели число вне диапозона')
+        } else if (guess > x) {
+            alert('Введите меньшее число')
+        } else if (guess < x) {
+            alert('Введите число больше')
+        } else if (guess == x) {
+            alert('Вы выиграли !!!')
+            break;
+        }
+    } 
+        
+    alert('Игра завершена')      
+    
+  </script>
